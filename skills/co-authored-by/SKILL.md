@@ -24,7 +24,7 @@ Some products append their line during `git commit`. When the commit you just cr
 ```
 docs(repos): add herdr-automations fork
 
-Co-authored-by: Grok <noreply@x.ai>
+Co-authored-by: Grok <grok-export@users.noreply.github.com>
 ```
 
 A blank line separates the subject or body from the trailer. The trailer is the last line. Keep human `Co-authored-by` lines, and put the agent line after them.
@@ -33,8 +33,8 @@ A blank line separates the subject or body from the trailer. The trailer is the 
 
 Copy the line. `Co-authored-by` and `Co-Authored-By` are the same Git trailer; keep the spelling shown.
 
-- **Grok:** `Co-authored-by: Grok <noreply@x.ai>`
-  Grok Build publishes no trailer. This is the line for a Grok session.
+- **Grok Build:** `Co-authored-by: Grok <grok-export@users.noreply.github.com>`
+  Grok Build publishes no trailer. This is the author it sets when it commits during GitHub export.
 - **Claude Code:** `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`
   The name is the model in use at commit time. With no model name: `Co-Authored-By: Claude <noreply@anthropic.com>`
 - **Codex:** `Co-authored-by: Codex <noreply@openai.com>`
