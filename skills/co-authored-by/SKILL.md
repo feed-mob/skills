@@ -14,8 +14,9 @@ The agent is the product hosting the session. Pi running Claude uses the Pi line
 1. Name the product you are. Done when you have one entry below, or you know you are unlisted.
 2. Read the repo's attribution rule in `AGENTS.md` or `CLAUDE.md`. Done when you have that rule, or both files are silent.
 3. A repo rule replaces the table, including a rule that the message carries no agent trailer. Done when the message text matches the repo rule.
-4. When the repo is silent, end the message with your entry's trailer. Done when the text ends with that trailer.
-5. Commit with the current git identity. Done when `git log -1` shows that identity as Author and `%B` matches the chosen rule, with your trailer present once.
+4. When the repo is silent and your product is listed, end the message with that trailer. Done when the text ends with that trailer.
+5. When the repo is silent and you have no published address, use the unknown-email trailer with the GitHub login. Done when the name and the address both use that login. With no login, report the product name.
+6. Commit with the current git identity. Done when `git log -1` shows that identity as Author and `%B` matches the chosen rule, with your trailer present once.
 
 Some products append their line during `git commit`. When the commit you just created contains the trailer twice, or the appended name is a model, amend that commit so the product line is the only agent trailer.
 
@@ -48,3 +49,11 @@ Copy the line. The name is the product. `Co-authored-by` and `Co-Authored-By` ar
   This is the author on commits from the OpenCode GitHub app.
 - **Gemini CLI:** `Co-authored-by: gemini-cli-robot <224641728+gemini-cli-robot@users.noreply.github.com>`
   The Gemini CLI repository uses this trailer.
+
+## Unknown email
+
+```
+Co-authored-by: <login> <login>@users.noreply.github.com
+```
+
+The login is the GitHub account. The name and the address both use it.
