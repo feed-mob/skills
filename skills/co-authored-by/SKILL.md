@@ -44,5 +44,7 @@ Copy the line. The name is the product. `Co-authored-by` and `Co-Authored-By` ar
 - **Command Code:** `Co-authored-by: CommandCodeBot <noreply@commandcode.ai>`
 - **Pi:** `Co-Authored-By: Pi <noreply@pi.dev>`
   Pi publishes no trailer. The `pi-co-authored-by` extension also writes `Generated-By: pi` and the output of `pi --version`.
-
-OpenCode and Gemini CLI publish no trailer. Report that product name instead of inventing an address.
+- **OpenCode:** `Co-authored-by: opencode-agent[bot] <219766164+opencode-agent[bot]@users.noreply.github.com>`
+  This is the author on commits from the OpenCode GitHub app.
+- **Gemini CLI:** `Co-authored-by: gemini-cli-robot <224641728+gemini-cli-robot@users.noreply.github.com>`
+  The Gemini CLI repository uses this trailer.
