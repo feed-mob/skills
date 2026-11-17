@@ -7,7 +7,7 @@ description: Co-authored-by trailer for the coding agent on a git commit. Load w
 
 The human stays the commit Author. The coding agent adds its trailer so the commit records who wrote the change.
 
-The agent is the product hosting the session. Pi running Claude uses the Pi lines. Cursor running any model uses the Cursor line.
+The agent is the product hosting the session. Pi running Claude uses the Pi line. Cursor uses the Cursor line.
 
 ## Steps
 
@@ -17,7 +17,7 @@ The agent is the product hosting the session. Pi running Claude uses the Pi line
 4. When the repo is silent, end the message with your entry's trailer. Done when the text ends with that trailer.
 5. Commit with the current git identity. Done when `git log -1` shows that identity as Author and `%B` matches the chosen rule, with your trailer present once.
 
-Some products append their line during `git commit`. When the commit you just created contains the trailer twice, amend that commit so one copy remains.
+Some products append their line during `git commit`. When the commit you just created contains the trailer twice, or the appended name is a model, amend that commit so the product line is the only agent trailer.
 
 ## Message
 
@@ -31,24 +31,18 @@ A blank line separates the subject or body from the trailer. The trailer is the 
 
 ## Trailers
 
-Copy the line. `Co-authored-by` and `Co-Authored-By` are the same Git trailer; keep the spelling shown.
+Copy the line. The name is the product. `Co-authored-by` and `Co-Authored-By` are the same Git trailer; keep the spelling shown.
 
 - **Grok Build:** `Co-authored-by: Grok <grok-export@users.noreply.github.com>`
   Grok Build publishes no trailer. This is the author it sets when it commits during GitHub export.
-- **Claude Code:** `Co-Authored-By: Claude Sonnet 5 <noreply@anthropic.com>`
-  The name is the model in use at commit time. With no model name: `Co-Authored-By: Claude <noreply@anthropic.com>`
+- **Claude Code:** `Co-Authored-By: Claude Code <noreply@anthropic.com>`
 - **Codex:** `Co-authored-by: Codex <noreply@openai.com>`
 - **Cursor:** `Co-authored-by: Cursor <cursoragent@cursor.com>`
 - **Copilot:** `Co-authored-by: Copilot <copilot@github.com>`
-- **Aider:** `Co-authored-by: aider (claude-sonnet-4-5) <aider@aider.chat>`
-  The parentheses hold the model id Aider is using.
+- **Aider:** `Co-authored-by: aider <aider@aider.chat>`
 - **Crush:** `Co-Authored-By: Crush <crush@charm.land>`
 - **Command Code:** `Co-authored-by: CommandCodeBot <noreply@commandcode.ai>`
-- **Pi:** Pi publishes no trailer. The `pi-co-authored-by` extension writes the model, then the harness. Use the session model and `pi --version`:
-
-  ```
-  Co-Authored-By: Claude Sonnet 4 <noreply@pi.dev>
-  Generated-By: pi 1.5.2
-  ```
+- **Pi:** `Co-Authored-By: Pi <noreply@pi.dev>`
+  Pi publishes no trailer. The `pi-co-authored-by` extension also writes `Generated-By: pi` and the output of `pi --version`.
 
 OpenCode and Gemini CLI publish no trailer. Report that product name instead of inventing an address.
