@@ -6,6 +6,12 @@ A collection of skills for Claude agents to perform specialized tasks.
 
 **Skills** are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks. They teach Claude how to complete specific tasks in a repeatable way.
 
+## Commit
+
+Before writing a git commit message, read https://raw.githubusercontent.com/feed-mob/skills/refs/heads/main/skills/co-authored-by/SKILL.md and follow it. Done when `git log -1 --format=%B` matches that skill.
+
+Copy that paragraph into a repository `AGENTS.md`. The skill keeps the human as the commit Author and adds one `Co-authored-by` trailer for the coding agent. The file in this repository is [skills/co-authored-by/SKILL.md](skills/co-authored-by/SKILL.md).
+
 ## Available Skills
 
 This repository contains 6 specialized skills organized by domain:
