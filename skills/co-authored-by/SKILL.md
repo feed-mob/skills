@@ -11,24 +11,13 @@ The agent is the product hosting the session. Pi running Claude uses the Pi line
 
 ## Steps
 
-1. Name the product you are. Done when you have its trailer below, or you will use the unknown-email line.
+1. Name the product you are. Done when you have its line in Trailers, or the unknown-email line.
 2. Read the repo's attribution rule in `AGENTS.md` or `CLAUDE.md`. Done when you have that rule, or both files are silent.
-3. A repo rule replaces the table. Done when the message text matches the repo rule.
-4. When the repo is silent, end the message with that product's trailer, or with the unknown-email line. With no GitHub login, the message names the product. Done when the message ends with that text.
-5. When you know the model id, put `Model: <id>` on the line before the agent trailer. Done when that line names the model, or you have no model id and the line is absent.
-6. Commit with the current git identity. Done when `git log -1` shows that identity as Author and `%B` matches the chosen rule, with the agent trailer present once.
-7. When the commit you just created repeats the agent trailer, or the appended co-author name is a model, amend that commit so one product line remains and the model id is on the `Model:` line. Done when `%B` has one agent trailer.
-
-## Message
-
-```
-docs(repos): add herdr-automations fork
-
-Model: <model id>
-Co-authored-by: Grok <noreply@x.ai>
-```
-
-The example shows placement for Grok. The agent trailer is your product's line. The model id is the model in this session. A blank line separates the subject or body from the trailer block. Keep human `Co-authored-by` lines, and put the agent line after them.
+3. When a repo rule exists, it replaces the table. Done when the message matches that rule, or both files are silent.
+4. When both files are silent, end with the product line or the unknown-email line. With no GitHub login, the message names the product. Done when the message ends with that text.
+5. When you know the model id, put `Model: <id>` on the line before the agent trailer. The model id is the model in this session. Done when that line names the model, or you have no model id and the line is absent.
+6. Commit with the current git identity. Done when `git log -1` shows that identity as Author.
+7. Amend until `%B` matches the message you chose. Done when the chosen trailer appears once, and `Model:` holds the model id when you know it.
 
 ## Trailers
 
@@ -53,3 +42,14 @@ Co-authored-by: <login> <login>@users.noreply.github.com
 ```
 
 The login is the GitHub account. The name and the address both use it.
+
+## Message
+
+```
+docs(repos): add herdr-automations fork
+
+Model: <model id>
+Co-authored-by: Grok <noreply@x.ai>
+```
+
+This example shows placement for Grok. Your agent trailer is the line you chose. A blank line separates the subject or body from the trailer block. Keep human `Co-authored-by` lines, and put the agent line after them.
