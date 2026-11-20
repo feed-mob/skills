@@ -16,19 +16,21 @@ The agent is the product hosting the session. Pi running Claude uses the Pi line
 3. A repo rule replaces the table, including a rule that the message carries no agent trailer. Done when the message text matches the repo rule.
 4. When the repo is silent and your product is listed, end the message with that trailer. Done when the text ends with that trailer.
 5. When the repo is silent and you have no published address, use the unknown-email trailer with the GitHub login. Done when the name and the address both use that login. With no login, report the product name.
-6. Commit with the current git identity. Done when `git log -1` shows that identity as Author and `%B` matches the chosen rule, with your trailer present once.
+6. When you know the model id, put `Model: <id>` on the line before the agent trailer. Done when that line names the model and the agent trailer is still last.
+7. Commit with the current git identity. Done when `git log -1` shows that identity as Author and `%B` matches the chosen rule, with your trailer present once.
 
-Some products append their line during `git commit`. When the commit you just created contains the trailer twice, or the appended name is a model, amend that commit so the product line is the only agent trailer.
+Some products append their line during `git commit`. When the commit you just created contains the trailer twice, or the appended name is a model, amend that commit so the product line is the only agent trailer. Put the model id on the `Model:` line.
 
 ## Message
 
 ```
 docs(repos): add herdr-automations fork
 
+Model: <model id>
 Co-authored-by: Grok <noreply@x.ai>
 ```
 
-A blank line separates the subject or body from the trailer. The trailer is the last line. Keep human `Co-authored-by` lines, and put the agent line after them.
+A blank line separates the subject or body from the trailer block. The model id is the model in this session. The agent trailer is the last line. Keep human `Co-authored-by` lines, and put the agent line after them.
 
 ## Trailers
 
