@@ -33,7 +33,6 @@ Copy the line. The name is the product. `Co-authored-by` and `Co-Authored-By` ar
 - **Crush:** `Co-Authored-By: Crush <crush@charm.land>`
 - **Command Code:** `Co-authored-by: CommandCodeBot <noreply@commandcode.ai>`
 - **Pi:** `Co-Authored-By: Pi <noreply@pi.dev>`
-  The `pi-co-authored-by` extension writes this line, then `Generated-By: pi` and the output of `pi --version`.
 
 ## Unknown email
 
