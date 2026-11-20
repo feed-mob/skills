@@ -7,7 +7,7 @@ description: Co-authored-by trailer for the coding agent on a git commit. Load w
 
 The human stays the commit Author. The coding agent adds its trailer so the commit records who wrote the change.
 
-The agent is the product hosting the session. Pi running Claude uses the Pi line. Cursor uses the Cursor line.
+The agent is the product hosting the session. For example, Pi running Claude uses the Pi line, and Cursor uses the Cursor line.
 
 ## Steps
 
